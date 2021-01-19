@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login_Option</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body >
+<form method="GET" th:action="@{/loginPage}">
+<div class="d-flex justify-content-center align-items-center">
+    <div class="col-md-6 mx-auto">
+
+                <button class="btn btn-primary  btn-block col-md-4 pb-2 mt-5 mb-4" type="submit" onclick="stdBtnClick">Login in as Student</button>
+
+                <div class="w-100 d-none d-md-block"></div>
+
+                <button class="btn btn-secondary  btn-block col-md-4 " type="button">Login in as Instructor
+                </button>
+            </div>
+
+    </div>
+</div>
+    </div>
+</div>
+</form>
+
+<script>
+        function stdBtnClick() {
+
+        }
+
+
+
+</script>
+
+</body>
+</html>

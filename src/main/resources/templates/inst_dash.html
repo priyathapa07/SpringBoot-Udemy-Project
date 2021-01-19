@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>INSTRUCTOR_DASHBOARD</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center"> Hello!Welcome to your Dashboard</h1>
+    <h3 class="text-center"> Add/View your lecture courses here!</h3>
+    <form method="post" modelAttribute="instructor" th:action="@{/inst_dash}">  <!-- post garepaxi k ma map huncha vanda nodelAttribute ko object user -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Course Name</label>
+                <input class="form-control" id="name" name="name" type="text">
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Course Description</label>
+                <input class="form-control" id="courseDescrip" name="description" type="text">
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Price</label>
+                <input class="form-control" id="price" name="price" type="text">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Add</button>
+    </form>
+</div>
+
+<div class="container">
+    <h2 class="text-center"> Your lecture courses</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Math</td>
+            <td>Learning about algebra</td>
+            <td>$125</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Science</td>
+            <td>Physics/Astronomy</td>
+            <td>$230</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+</html>

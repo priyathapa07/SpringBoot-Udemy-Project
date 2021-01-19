@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student_DASHBOARD</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center"> Hello!Welcome to your Dashboard</h1>
+    <h4 class="text-center"> Enroll/View your courses here!</h4>
+
+
+
+    <h3 class="text pt-3"> Available Courses</h3>
+      <!-- post garepaxi k ma map huncha vanda nodelAttribute ko object user -->
+      <!--  <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Course Name</label>
+                <input class="form-control" id="name" name="name" type="text">
+            </div>
+
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Course Instructor</label>
+                <input class="form-control" id="courseInst" name="courseInst" type="text">
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Course Price</label>
+                <input class="form-control" id="coursePrice" name="coursePprice" type="text">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Enroll</button>-->
+    <div class="row">
+    <div class=" col-lg-4" th:each="course: ${courses}">
+
+        <form method="post" modelAttribute="student" th:action="@{/enrollNow}">
+
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                        <h3 class="my-0 font-weight-normal" th:text="${course.name}">Literature</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <h3 class="card-title pricing-card-title"  th:text="'$'+${course.price} +'/mo'">
+<!--                            <span><small class="text-muted">/ mo</small></span>-->
+                        </h3>
+                        <h4 class="my-0 font-weight-normal" th:text="${course.description}"></h4>
+
+
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>By: Instructor</li>
+
+                        </ul>
+                        <button type="button" class="btn btn-lg btn-block btn-primary">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="container">
+    <h2 class="text-center"> Your Enrolled courses</h2>
+
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Course Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Instructor</th>
+            <th scope="col">Price</th>
+
+            <!--
+            get instructor name too
+            -->
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <th scope="row">1</th>
+            <td>Math</td>
+            <td>Calculation Class</td>
+            <td> Axl Rose</td>
+            <td>$125</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Science</td>
+            <td>Imagination Class</td>
+            <td>Peter Rus</td>
+            <td>$230</td>
+        </tr>
+
+
+        </tbody>
+    </table>
+
+</div>
+
+
+</body>
+</html>
